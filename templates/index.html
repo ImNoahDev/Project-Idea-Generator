@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Idea</title>
+</head>
+<body>
+    <div>
+        <h1>Generate Idea</h1>
+        <form method="post">
+            <div>
+                <label for="language">Language:</label>
+                <input type="text" id="language" name="language" required>
+            </div>
+            <div>
+                <label for="hours">Hours:</label>
+                <input type="number" id="hours" name="hours" required>
+            </div>
+            <div>
+                <label for="extra_info">Extra Info:</label>
+                <textarea id="extra_info" name="extra_info" rows="4"></textarea>
+            </div>
+            <div>
+                <button type="submit">Generate</button>
+            </div>
+        </form>
+        <div>
+            <h2>Generated Idea:</h2>
+            <p>{{ generated_idea }}</p>
+        </div>
+    </div>
+</body>
+</html>
