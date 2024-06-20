@@ -6,10 +6,10 @@ from flask import Flask, render_template, request
 # Initialise Flask app
 app = Flask(__name__)
 # Initialise OpenAI client
-client = Client(host='http://192.168.1.221:11434')
+client = Client(host='http://localhost:11434')
 
 # Function to generate idea
-def generate_idea(language, hours, extra_info, model="llama3"):
+def generate_idea(language, hours, extra_info, model="tinyllama"):
     # Set prompt message
     message = f"give me one idea for a {language} project that will take {hours} hours to complete. Give the idea in 5 words or less. Do not output anything except the answer. {extra_info}"
     # Generate response
@@ -32,4 +32,7 @@ def index():
 
 # Main function
 if __name__ == '__main__':
-    app.run(debug=True)
+    print("Starting server...")
+    print("Server running on http://localhost:8080")
+    # Run server
+    serve(app, host='0.0.0.0', port=8080)
